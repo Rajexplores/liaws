@@ -1,0 +1,33 @@
+p.view_demo_json {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+p.view_demo_json a {
+    font-size: .75rem;
+    padding: 0.25rem 0.75rem;
+    margin-top: 0;
+    color: #FFF;
+    background-color: #ff7f50;
+    line-height: .75rem;
+    border: 2px solid #ff7f50;
+    cursor: pointer;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+    text-decoration: none !important;
+}
+p.view_demo_json a svg {
+    fill: #FFF;
+    opacity: .5;
+    width: 1rem;
+    height: auto;
+    line-height: 1rem;
+    margin-right: 0.5rem;
+}

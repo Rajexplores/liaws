@@ -1,0 +1,100 @@
+.ff input, .ff input:focus, .ff select, .ff select:focus {
+    width: 100%;
+    border: solid #cacaca 1px;
+}
+
+.ff input, .ff select {
+    height: 2.5rem;
+    padding-left: 34px;
+    font-weight: 400;
+}
+.noconsent{display:none;}
+
+#noconsent.required{
+    border: 2px solid #cc1b00;
+    background-color: #f8bfc5;
+    padding: 10px;
+    margin-bottom: 0.625rem;
+    color: #cc1b00 !important;
+}
+#noconsent.required label{
+    color: #cc1b00 !important;
+}
+#noconsent.required h3.noconsent:after{
+    content:":";
+}
+#noconsent.required h3.noconsent{
+    text-transform: capitalize;
+    display:block;
+    color: #cc1b00 !important;
+    background: #cc1b00;
+    font-weight: 700;
+    font-size: 1rem !important;
+    border: none;
+    margin: -10px -10px 0.625rem;
+    color: #FFF !important;
+    padding: 5px 10px;
+    line-height: 1.1;
+}
+#noconsent.required a{
+    color: #600 !important;
+    text-decoration: underline;
+}
+.input-row.pd-15 > *{
+    width:100%;
+}div#errors {
+    margin-top: 1rem;
+}
+
+#bottom{display:none !important;}
+.bad #request_form,.bad #requestForm1{
+    display: none !important;
+}
+.bad #form0{
+    display: block !important;
+}
+@media only screen and (max-width: 767px){
+    #selected-fran{
+        margin-top: -2rem;
+        border-color:#ffd50c;
+    }
+    .selected-fran .h5{
+        cursor: pointer;
+        line-height: 1.5rem;
+    }
+    span.toggle_mobile {
+        font-size: 32px;
+        line-height: 1rem;
+        vertical-align: middle;
+        float: right;
+        padding-right: 8px;
+    }
+    span.toggle_mobile:before{
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        line-height: 1.5rem;
+        -webkit-mask: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+        mask: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: #000;
+        display: inline-flex;
+    }
+    #selected-fran.open span.toggle_mobile:before {
+        transform: scaleY(-1);
+    }
+    .innards{
+       overflow:hidden;
+       max-height: 0;
+       transition: max-height .2s ease;
+    }
+    #selected-fran.open .innards{
+        max-height: 200px;
+    }
+}
+.remove-cart-item{
+    text-decoration: none;
+}

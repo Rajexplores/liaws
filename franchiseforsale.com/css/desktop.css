@@ -1,0 +1,382 @@
+/* @media only screen and (min-width: 1920px){
+    html {
+      font-size: 20px;
+    }
+}
+@media only screen and (min-width: 2560px){
+    html {
+      font-size: 24px;
+    }
+} */
+
+.pd-30{
+    padding: 0 30px !important;
+}
+
+.larger {
+    font-size: 1.4rem;
+}
+
+/* @media only screen and (min-width: 768px){
+    #main {
+        padding: 5rem 0 1.875rem;
+    }
+} */
+a:focus, a:hover {
+    color: #1c84b8;
+}
+
+header#header nav{
+    display: block;
+}
+
+.container{
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 1025px){
+
+    /* header#header nav ul li:not(:last-child) {
+        margin-right: .5rem;
+    } */
+
+    #toggle{
+        display: none;
+    }
+
+    .container{
+        max-width: 1200px !important;
+    }
+
+    header#header nav ul a:not(.logo a){
+        font-size: 0.95rem;
+    }
+    .container.flex{
+        display: flex;
+    }
+    .resubmit{
+        width: 41.66667%;
+    }
+    .resubmit form{
+        margin-left: 15px;
+    }
+
+    /* Profile video download text */
+    #profile #videoException{
+        margin-top: 50px;
+    }
+}
+
+#main:not(.home-main){
+    margin-top: 145px !important; 
+}
+
+.landing-body #main:not(.home-page,.custom-page){
+    margin-top: 100px !important; 
+}
+
+#banner{
+    padding: 34px 0 21px;
+}
+
+header#header li.has-submenu:hover > ul{
+    display: block !important;
+}
+
+
+/* Home */
+
+#home .home-filter{
+    width: 33.33%;
+}
+
+#home .latest-blogs .large-6{
+    width: 50%;
+    /* height: 534px; */
+    height: 600px;
+}
+
+@media only screen and (min-width: 1025px) {
+    #home .popular-fran-list li{
+        width: 14%;
+        max-width: 141px;
+        font-size: 1rem;
+    }
+
+    #home .home-filter form .form-group{
+        max-width: 99%;
+    }
+
+    #banner.use_bg:not(.customInvest,.mh-auto){
+        min-height: 377px !important;
+    }
+
+    #banner.customInvest{
+        min-height: 300px !important;
+    }
+
+    .logo-mobile{
+        display: none;
+    }
+}
+
+.wd-75{
+    width: 83.33%;
+}
+
+
+
+/* Landing Directory Banner */
+.landing-dir-banner{
+    min-height: 377px;
+}
+
+#banner.landing-dir-banner{
+    padding-top: 90px;
+}
+
+.directory-main, .main-results:not(.custom-search){
+    margin-top: 145px !important;
+}
+
+/* .main-results.custom-search{
+    margin-top: 100px !important;
+} */
+
+.search-alpha-row{
+    width: 33.33% !important;
+}
+
+#banner.investment-banner{
+    min-height: 233px !important;   
+}
+
+
+/* Profile */
+#profile #video .profile-video-row{
+    width: 75%;
+    margin: auto;
+}
+
+/*  */
+
+/* #home .latest-blogs .large-4{ */
+    /* width: 33.33%; */
+    /* min-height: 350px; */
+/* } */
+
+/* #home .latest-blogs .blogs-container{
+    width: 58.33%;
+} */
+
+#banner.use_bg,
+#banner.landing-dir-banner{
+    background-image: var(--bg-desktop);
+    /* background-size: auto !important; */
+}
+
+.staff .staff-wrap{
+    width: 25%;
+}
+
+#breadcrumbs_container .container{
+    padding: 0 15px;
+}
+
+/* directory */
+.directory-body header#header .container,
+.landing-body header#header .container,
+.landingHeader .container{
+    justify-content: space-between;
+}
+
+.directory-body header#header nav,
+.landing-body header#header nav,
+header#header.landingHeader nav{
+    margin-right: 15%;
+}
+
+
+.main-results #banner .banner-intro-bg h1{
+    font-size: 2.8125rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .staff .staff-wrap{
+        width: 16.66%;
+    }
+
+    /* .directory-body #breadcrumbs_container .container > ol#breadcrumbs{
+        margin-left: .3rem;
+    } */
+
+    #aboutModal .guts{ 
+        top: 80px;
+    }
+
+    /* .results-filter{
+        padding: 0 0 21px;
+    } */
+
+    .custom-page .results-filter{
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    header#header nav > ul > li{
+        margin-right: .5vw;
+    }
+
+    header#header nav ul a{
+        display: flex;
+    }
+
+    header#header nav > ul a i{
+        margin-left: 0.5rem;
+    }
+
+    #home .popular-fran-list li {
+        width: 14%;
+        max-width: 141px;
+        height: 90px;
+        font-size: 1rem;
+    }
+
+    #home .latest-blogs{
+        padding: 21px 15px;
+    }
+
+    .results-filter .intro-item2-row .form-group.search-button{
+        width: 26%;
+    }
+
+    #profile .splide__slide img, .splide--fade>.splide__track>.splide__list{
+        height: auto;
+    }
+
+    #results, .splide, .splide__slide{
+        padding: 0;
+    }
+
+    #profile .splide--fade>.splide__track> .splide__list>.splide__slide{
+        width: 100% !important;
+        padding: 0 7.1625px;
+    }
+
+    #profile .profile-header-row .item2 .slide-link{
+        bottom: 2px;
+    }
+
+    .directory-body header#header nav {
+        margin-right: 10.8%;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    header#header .logo{
+        margin-left: -13px;
+        /* padding-left: 12px; */
+    }
+
+    header#header nav > ul > li.menu-industry{
+        margin-left: 13%;
+    }
+
+    header#header nav ul a{
+        font-size: 0.95rem !important;
+    }
+
+    /* header#header > .container{
+        padding: 22px 5px;
+    } */
+
+    #footer .footer-logo{
+        height: 60px;
+        width: auto;
+    }
+
+    .results-filter .container{
+        padding: 0;
+    }
+
+    .results-filter .intro-item2-row .form-group.search-button{
+        width: 25%;
+    }
+
+    #home .latest-blogs{
+        padding: 21px 15px;
+    }
+
+    #home .featured-franchises.container{
+        padding: 0;
+    }
+
+    #home .splide__list#featured-franchises-slider-list{
+        transform: translateX(-2000px);
+    }
+
+    /* #home .featured-franchises .splide__slide{
+        width: 33.33% !important;
+    } */
+
+    /* #home .new-fran-item .splide__slide{
+        width: 100% !important;
+    } */
+
+}
+
+.subscribe-main #banner,
+.pages-main #banner{
+    padding: 21px 0;
+}
+
+
+.directory-main #banner{
+    padding: 34px 0 21px !important;
+    min-height: 377px;
+    line-height: 1.4;
+}
+
+.subscribe-main .banner-intro-bg h1,
+.pages-main .banner-intro-bg h1,
+.directory-main .banner-intro-bg h1,
+.landingIntro h1{
+    font-size: 2.75rem;
+    line-height: 1;
+}
+
+.landing-dir-banner.scholarship{
+    background-size: auto !important;
+}
+
+.landing-dir-banner.scholarship2019{
+    background-size: contain !important;
+}
+
+.landing-dir-banner.scholarship2019 .container .large-6, #home .latest-blogs .new-fran-item.large-6{
+    width: 50%;
+}
+
+.mh-auto{
+    min-height: min-content !important;
+}
+
+/* Avertise with us */
+.adv-thankyou-block{
+    width: 66.66667%;
+}
+
+#formError{
+    width: 50%;
+}
+
+#home #featured-franchises-slider .splide__arrow--prev{
+    left: 1em;
+}
+
+#home #featured-franchises-slider .splide__arrow--next{
+    right: 1em;
+}

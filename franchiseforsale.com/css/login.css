@@ -1,0 +1,97 @@
+body{
+    background-color: #f1efec;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto","Gotham","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    position: relative;
+    font-size: 16px;
+    overflow: hidden;
+ }
+ #login { 
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+.shell {
+    border: solid #cacaca 1px;
+    background: #fff;
+    padding-top: 8px;
+    margin-bottom: 21px;
+    position: relative;
+    padding:15px;
+}
+i.fas {
+    color: #0a0a0a;
+    font-size: 48px;
+    margin-bottom: 0;
+    background: #FFF;
+    padding: 0 10px;
+}
+ form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+form div {
+    width: 100%;
+    position: relative;
+}
+ label {
+    display: block;
+    font-size: .875rem;
+    line-height: 1.8;
+    color: #0a0a0a;
+    font-family: sans-serif;
+    margin: 5px 0 0 0;
+    font-weight: 700;
+}
+label:after {
+    color: #8dc63f;
+    content: " (Required)";
+    font-size: 75%;
+}
+ input{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 0 1rem;
+    padding: .5rem;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #0a0a0a;
+    transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+    appearance: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 200px;
+    border: solid #cacaca 1px;
+    height: 2.5rem;
+    font-weight: 400;
+    max-width: 100%;
+}
+ button{
+     max-width: 100%;
+     min-height: 40px;
+     margin: 0;
+     background-color: #8dc63f;
+     border: none;
+     color: #fefefe;
+     font-weight: 700;
+     padding: 10px 16px;
+     font-size: 1.1rem;
+     width: 100%;
+     height: 40px;
+     line-height: 1;
+     display: inline;
+     transition: background-color .25s ease-out,color .25s ease-out;
+     cursor:pointer;
+ }
+ button:hover{
+    background-color: #0957a0;
+    color: #fefefe;
+ }

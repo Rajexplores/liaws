@@ -1,0 +1,45 @@
+/* SITE SPECIFIC STYLES AND OVERRIDES */
+
+#header.navbar-fixed-top {
+    position: relative;
+}
+.caret .fa-caret-down:before{
+    display: none;
+}
+.global_color{
+    color:#8dc63f;
+}
+#tool-header .btn,.closing-section{
+    background-color:#8dc63f;
+}
+@media only screen and (min-width: 48rem) {
+    #tool-header .btn:hover{
+        color:#8dc63f;
+    }
+}
+
+#breadcrumbs_container{
+    display: none;
+}
+
+#tool-header{
+    margin-top: 100px;
+}
+
+@media only screen and (min-width: 48rem){
+    .closing-section h2.heading {
+        font-size: 2.25rem !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #tool-header{
+        margin-top: 70px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #tool-header{
+        margin-top: 54px;
+    }
+}

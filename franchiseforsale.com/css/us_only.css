@@ -1,0 +1,60 @@
+#basic-modal-content{
+    display:none !important
+}
+.miniModal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 21;
+    background: #000;	
+    background: rgba(0,0,0,.8);	
+    display: none;
+}
+.miniModal div {
+    position: absolute;
+    width: 380px;
+    top: 1rem;
+    padding: 1rem;
+    color: #333;
+    background-color: #FFF;
+    border: 1px solid #000;
+    margin: 0;
+    left: 1rem;
+    z-index: 22;
+    box-sizing: border-box;
+    text-align: center;
+    max-width: calc(100% - 2rem);
+}
+#EU{
+    background: #FFF;	
+    background: rgba(255,255,255,.8);	
+}
+#EU div{
+    color: #FFF;
+    background-color: #039;	
+}
+@media only screen and (min-width: 960px){
+    .miniModal div {
+        position: fixed;
+        top: 2rem;
+        left: calc(50% - 190px);
+    }
+}
+.miniModal .closing {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+.miniModal .closing:hover {
+	opacity: .8;
+}
+.miniModal img {
+    width: 150px;
+    display: table;
+    margin: 0 auto 20px;
+}
