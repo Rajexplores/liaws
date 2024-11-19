@@ -1,0 +1,40 @@
+<?php
+$return = '<svg viewBox=".5 .5 3 4" fill="none" stroke="#FFF" stroke-linecap="round"><path d="M1 4h-.001 V1h2v.001 M1 2.6 h1v.001"/></svg>';
+if($_GET['icon'] == 'email'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 804.37 563.93"><defs><style>.cls-1{fill:none;stroke:#cfcece;stroke-miterlimit:10;stroke-width:47px;}</style></defs><rect class="cls-1" x="23.5" y="23.5" width="757.37" height="516.93" rx="43.66"/><path class="cls-1" d="M147.39,290.2a43.45,43.45,0,0,0,12.54,26.3L472.85,629.42a43.66,43.66,0,0,0,61.74,0L838.38,325.64a43.57,43.57,0,0,0,12.54-35.44" transform="translate(-96.97 -257.37)"/><path class="cls-1" d="M850.92,787.11a43.57,43.57,0,0,0-12.54-35.44l-213-213-90.77,90.76a43.66,43.66,0,0,1-61.74,0l-90.76-90.76L159.93,760.81a43.45,43.45,0,0,0-12.54,26.3" transform="translate(-96.97 -257.37)"/></svg>';
+}
+if($_GET['icon'] == 'person'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.63 758.9"><defs><style>.cls-1{fill:none;stroke:#cfcece;stroke-miterlimit:10;stroke-width:47px;}</style></defs><path class="cls-1" d="M779.39,667.12C743.75,469.48,620.63,520.24,620.63,520.24,544.19,574.25,492,565.6,492,565.6s-52.17,8.65-128.6-45.36c0,0-123.12-50.76-158.76,146.88S305.1,854,305.1,854H679S815,864.76,779.39,667.12Z" transform="translate(-175.21 -118.66)"/><circle class="cls-1" cx="316.82" cy="185.54" r="162.04"/></svg>';
+}
+if($_GET['icon'] == 'zipcode'){
+    $return = '<svg data-name="Postal Code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 808.19 538.07"><defs><style>.cls-1{fill:none;stroke:#cfcece;stroke-miterlimit:10;stroke-width:47px;}</style></defs><path class="cls-1" d="M781.32,447.32a97.92,97.92,0,0,0,97.92-97.92v-2.88a97.92,97.92,0,0,0-97.92-97.92H216a97.92,97.92,0,0,0-97.92,97.92v2.88A97.92,97.92,0,0,0,216,447.32" transform="translate(-94.55 -225.1)"/><rect class="cls-1" x="118.54" y="149.72" width="571.11" height="364.85" rx="43.66"/><path class="cls-1" d="M233.39,381.41A29.93,29.93,0,0,0,242.85,400l236,220.86a34.54,34.54,0,0,0,46.56,0L754.44,406.42a29.59,29.59,0,0,0,9.46-25" transform="translate(-94.55 -225.1)"/><path class="cls-1" d="M763.9,732.13a29.6,29.6,0,0,0-9.46-25L593.81,556.77l-68.44,64.06a34.54,34.54,0,0,1-46.56,0l-68.44-64.06L242.85,713.57a29.91,29.91,0,0,0-9.46,18.56" transform="translate(-94.55 -225.1)"/></svg>';
+}
+if($_GET['icon'] == 'phone'){
+    $return = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24" ><path d="M18 24h-12c-1.104 0-2-.896-2-2v-20c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v20c0 1.104-.896 2-2 2zm1-5.083h-14v3.083c0 .552.449 1 1 1h12c.552 0 1-.448 1-1v-3.083zm-7 3c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm7-17h-14v13h14v-13zm-1-3.917h-12c-.551 0-1 .449-1 1v1.917h14v-1.917c0-.551-.448-1-1-1zm-4.5 1.917h-3c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3c.276 0 .5.224.5.5s-.224.5-.5.5z"/></svg>';
+}
+if($_GET['icon'] == 'city'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 2h2v2h2v3.702l7 2.618v12.68h1v1h-24v-1h1v-11h6v-8h2v-2h2v-2h1v2zm3 3h-7v18h1v-2h5v2h1v-18zm-2 17h-3v1h3v-1zm8 1h1v-11.987l-6-2.243v14.23h1v-2h4v2zm-14-10h-5v10h1v-2h3v2h1v-10zm-2 9h-1v1h1v-1zm15 0h-2v1h2v-1zm-16-5v2h-1v-2h1zm2 0v2h-1v-2h1zm5-10v12h-1v-12h1zm10 11v1h-4v-1h4zm-8-11v12h-1v-12h1zm8 9v1h-4v-1h4zm-17-2v2h-1v-2h1zm2 0v2h-1v-2h1zm15 0v1h-4v-1h4zm0-2v1h-4v-1h4zm-8-9h-3v1h3v-1z"/></svg>';
+}
+if($_GET['icon'] == 'location'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c3.196 0 6 2.618 6 5.602 0 3.093-2.493 7.132-6 12.661-3.507-5.529-6-9.568-6-12.661 0-2.984 2.804-5.602 6-5.602m0-2c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>';
+}
+if($_GET['icon'] == 'investment'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820.28 823.86"><defs><style>.cls-1,.cls-2{fill:none;stroke:#cfcece;stroke-miterlimit:10;stroke-width:47px;}.cls-2{stroke-linecap:round;}</style></defs><path class="cls-1" d="M873.46,656.81a43.54,43.54,0,0,1,14,32V844.44a43.65,43.65,0,0,1-43.66,43.65h-686a43.65,43.65,0,0,1-43.65-43.65V688.82a43.53,43.53,0,0,1,12.67-30.76" transform="translate(-90.65 -87.73)"/><line class="cls-2" x1="205.03" y1="509.03" x2="612.55" y2="509.03"/><line class="cls-2" x1="408.79" y1="317.44" x2="408.79" y2="409.44"/><line class="cls-2" x1="408.79" y1="23.5" x2="408.79" y2="121.57"/><path class="cls-1" d="M877,660.73,810.18,493c-13.55-25.3-19.55-43.66-43.66-43.66H628a192.94,192.94,0,0,1-254.36,0H235.05c-24.11,0-30.1,18.36-43.65,43.66L124.58,660.73c-8.23,22,6.4,30.51,30.52,30.51H846.48C870.59,691.24,885.23,682.72,877,660.73Z" transform="translate(-90.65 -87.73)"/><circle class="cls-1" cx="410.14" cy="216.47" r="192.97"/><path class="cls-2" d="M500.79,307.23a49,49,0,1,1-49,49" transform="translate(-90.65 -87.73)"/><path class="cls-2" d="M500.79,307.23a49,49,0,1,1,49-49" transform="translate(-90.65 -87.73)"/></svg>';
+}
+if($_GET['icon'] == 'concept'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430.67 478.09"><defs><style>.cls-1,.cls-2{fill:none;stroke:#244167;stroke-miterlimit:10;stroke-width:47px;}.cls-2{stroke-linecap:round;}</style></defs><rect class="cls-1" x="23.5" y="23.5" width="239.8" height="431.09" rx="10.15"/><rect class="cls-1" x="263.3" y="214.79" width="143.87" height="239.8" rx="10.15"/><line class="cls-2" x1="167.37" y1="214.79" x2="119.43" y2="214.79"/><line class="cls-2" x1="167.37" y1="120.52" x2="119.43" y2="120.52"/><line class="cls-2" x1="143.9" y1="443.62" x2="143.9" y2="380.46"/></svg>';
+}
+if($_GET['icon'] == 'cost'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 667.88 668.15"><defs><style>.cls-1,.cls-2{fill:none;stroke:#244167;stroke-miterlimit:10;stroke-width:45px;}.cls-2{stroke-linecap:round;}</style></defs><path class="cls-1" d="M295.3,778.53V514.19a43.65,43.65,0,0,0-43.65-43.66H232.38a43.66,43.66,0,0,0-43.66,43.66V778.53a3.59,3.59,0,0,0,3.6,3.59h99.39A3.58,3.58,0,0,0,295.3,778.53Z" transform="translate(-166.22 -136.47)"/><path class="cls-1" d="M552.24,778.53V618.22a43.65,43.65,0,0,0-43.65-43.66H489.32a43.66,43.66,0,0,0-43.66,43.66V778.53a3.59,3.59,0,0,0,3.59,3.59h99.4A3.59,3.59,0,0,0,552.24,778.53Z" transform="translate(-166.22 -136.47)"/><path class="cls-1" d="M811.6,778.53V405.14a43.66,43.66,0,0,0-43.66-43.66H748.68A43.66,43.66,0,0,0,705,405.14V778.53a3.59,3.59,0,0,0,3.59,3.59H808A3.59,3.59,0,0,0,811.6,778.53Z" transform="translate(-166.22 -136.47)"/><circle class="cls-1" cx="75.79" cy="177.5" r="53.29"/><circle class="cls-1" cx="332.73" cy="282.3" r="53.29"/><circle class="cls-1" cx="591.09" cy="75.79" r="53.29"/><line class="cls-2" x1="281.55" y1="268.95" x2="122.34" y2="203.46"/><line class="cls-2" x1="553.23" y1="113.45" x2="381.62" y2="259.21"/></svg>';
+}
+if($_GET['icon'] == 'chevron'){
+    $return = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>';
+}
+if($_GET['icon'] == 'trashcan'){
+    $return = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path d="M19 24h-14c-1.104 0-2-.896-2-2v-17h-1v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2h-1v17c0 1.104-.896 2-2 2zm0-19h-14v16.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-16.5zm-9 4c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm-2-7h-4v1h4v-1z"/></svg>';
+}
+header('Content-type: image/svg+xml');
+echo '<?xml version="1.0" standalone="no"?>';
+echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">';
+echo $return;
+?>

@@ -1,0 +1,297 @@
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Content-Language "en"
+</IfModule>
+<IfModule pagespeed_module>
+ModPagespeed off
+</IfModule>
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} (wp-(content|login|load|sign|includes).*)$ [OR]
+RewriteCond %{REQUEST_URI} ((smp_services|xmlrpc|wlwmanifest).*)$
+RewriteRule ^ / [F]  
+
+#Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+#Error Handling
+ErrorDocument 404 /404.php
+ErrorDocument 500 /page.php?section=error
+
+RewriteRule ^error  page.php?section=error
+
+
+Options -Indexes
+#Home Page
+
+#Verification
+RewriteRule ^verify(.*)  search_results.php?verify=true [L,QSA]
+
+
+#Sitemap
+RewriteRule ^sitemap.xml(.*)$ /sitemapxml.php$1
+RewriteRule ^sitemap-concepts.xml(.*)$ /sitemapxml.php?sitemap=concepts [L,QSA]
+RewriteRule ^sitemap-main.xml(.*)$ /sitemapxml.php?sitemap=main [L,QSA]
+RewriteRule ^sitemap-categories.xml(.*)$ /sitemapxml.php?sitemap=categories [L,QSA]
+#RewriteRule ^sitemap-cities.xml(.*)$ /sitemapxml.php?sitemap=cities [L,QSA]
+RewriteRule ^sitemap-categories-by-state.xml(.*)$ /sitemapxml.php?sitemap=categories-by-state [L,QSA]
+
+#Pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(about-us|advertise-with-us|contact-us|finance-center|privacy-website-usage-policy|sitemap|site-map)$ page.php?section=$1 [L,QSA]
+RewriteRule ^(advertise-with-us|contact-us)/updated$ page.php?section=$1&thankyou=true [L,QSA]
+
+RewriteRule ^form1  form1.php
+RewriteRule ^form2  form2.php
+RewriteRule ^photography-credits  page.php?section=photography-credits
+RewriteRule ^tips-and-tools  tips_and_tools.php
+RewriteRule ^landing/([a-zA-Z-]+)?$  /landing_new.php?url=$1 [L,QSA]
+
+#Press Release
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^press-release/([^/]+)?$ page.php?press=$1&section=press-release [L,QSA]
+
+#Newsletter
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(find-a-franchise/|)newsletter-sign-up/subscribe/updated subscribe.php?subscribed=true [L,QSA]
+RewriteRule ^(find-a-franchise/|)newsletter-sign-up/unsubscribe/updated subscribe.php?unsubscribed=true [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(find-a-franchise/|)newsletter-sign-up/subscribe subscribe.php [L,QSA]
+RewriteRule ^(find-a-franchise/|)newsletter-sign-up/unsubscribe subscribe.php?unsubscribe=true [L,QSA]
+RewriteRule ^(find-a-franchise/|)newsletter-sign-up subscribe.php [L,QSA]
+
+#Resources
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^resources/(frequently-asked-franchising-questions|net-worth-calculator)$ page.php?section=$1 [L,QSA]
+RewriteRule ^resources  page.php?section=resources
+
+#Request Information
+RewriteRule ^information-request  information-request.php [L,QSA]
+
+#city pages
+#RewriteRule ^near-me/([a-z]+)-(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)?$  city-pages.php?city=$1&state_name=$2 [L,QSA]
+
+#New Lead Form pages/JSON
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo|1|2))/request-information  lead-form.php?landing=true&landing_url=$1 [L,QSA,NC]
+RewriteRule ^request-information  lead-form.php [L,QSA]
+RewriteRule ^lf-(.*).svg   /includes/lead-form-svg.php?icon=$1 [L,QSA]
+RewriteRule ^lf-([0-9]+)-([0-9]{6}).json  /includes/lead-form-profile.php?site_id=$1&concept_id=$2 
+RewriteRule ^lf-cart.json  /includes/lead-form-cart.php [L,QSA,NC]
+
+#Landing Request Information
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/information-request$  information-request.php?landing=true&landing_url=$1 [L,QSA]
+
+#Landing
+RewriteRule ^afforable-business-franchises.html([^/]+)?$  /afforable-business-franchises.php?landing=true&landing_url=$1 [L,QSA]
+
+#Landing (states)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/state/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming|canada|international)-franchises$ /landing.php?state_name=$3&landing=true&landing_url=$1 [L,QSA]
+
+#Landing (categories)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/industry/(all-industries|advertising-franchises|auto-franchises|beauty-franchises|business-opportunities|business-services-franchises|child-related-franchises|cleaning-franchises|computer-internet-franchises|education-training-franchises|entertainment-franchises|financial-franchises|food-franchises|green-eco-friendly-franchises|health-fitness-franchises|home-based-franchises|home-services-repair-franchises|low-cost-franchises|manufacturing|mobile-franchises|pet-franchises|photography-video|printing-copy-shipping-signs|recreation-sports-franchises|restoration-disaster-recovery-franchises|retail-franchises|seasonal-franchises|security-alarm-franchises|senior-care-franchises|sports-recreation-franchises|travel-franchises|vending-franchises|veteran-franchises-for-sale|wholesale-distribution-franchises)$ /landing.php?cat_name=$3&landing=true&landing_url=$1 [L,QSA,NC]
+
+#Landing (categories|state|investment)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/industry/(all-industries|advertising-franchises|auto-franchises|beauty-franchises|business-opportunities|business-services-franchises|child-related-franchises|cleaning-franchises|computer-internet-franchises|education-training-franchises|entertainment-franchises|financial-franchises|food-franchises|green-eco-friendly-franchises|health-fitness-franchises|home-based-franchises|home-services-repair-franchises|low-cost-franchises|manufacturing|mobile-franchises|pet-franchises|photography-video|printing-copy-shipping-signs|recreation-sports-franchises|restoration-disaster-recovery-franchises|retail-franchises|seasonal-franchises|security-alarm-franchises|senior-care-franchises|sports-recreation-franchises|travel-franchises|vending-franchises|veteran-franchises-for-sale|wholesale-distribution-franchises)/state/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming|canada|international)/investment/([0-9]+)$ /landing.php?cat_name=$3&state_name=$4&investment=$5&landing=true&landing_url=$1 [L,QSA,NC]
+
+#Landing (investments)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(great-franchises-(a|b|c|d|e|q|r|demo))/investment-level/franchises-(under|over)-([0-9]+)$ /landing.php?investment=$4&range=$3&landing=true&landing_url=$1 [L,QSA]
+RewriteRule ^(find-a-franchise)/investment-level/franchises-(under|over)-([0-9]+)$ /landing.php?investment=$4&range=$3&landing=true&landing_url=$1 [L,QSA]
+#RewriteRule ^(find-a-franchise)/investment-level/([0-9]+)$ landing.php?section=high-investment-franchises&invest=$2&landing=true&landing_url=$1 [L,QSA]
+
+#Landing Search Results (other) 
+RewriteRule ^(find-a-franchise)/(hot-and-trendy)$  landing.php?section=$2&landing=true&landing_url=$1 [L,QSA]
+
+#Landing Directories
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/(industry|investment-level|state)$ /directory.php?section=$3&landing=true&landing_url=$1 [L,QSA] 
+
+#Landing (page)
+RewriteRule ^find-a-franchise/search  /landing.php?landing=true&landing_url=find-a-franchise&home=true [L,QSA,NC]
+RewriteRule ^(great-franchises-(a|b|c|d|e|q|r|demo))$  /landing.php?landing=true&landing_url=$1 [L,QSA,NC]
+
+#SEO Search Results (categories|state)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(advertising-franchises|auto-franchises|beauty-franchises|business-opportunities|business-services-franchises|child-related-franchises|cleaning-franchises|computer-internet-franchises|education-training-franchises|entertainment-franchises|financial-franchises|food-franchises|green-eco-friendly-franchises|health-fitness-franchises|home-based-franchises|home-services-repair-franchises|low-cost-franchises|manufacturing|mobile-franchises|pet-franchises|photography-video|printing-copy-shipping-signs|recreation-sports-franchises|restoration-disaster-recovery-franchises|retail-franchises|seasonal-franchises|security-alarm-franchises|senior-care-franchises|sports-recreation-franchises|travel-franchises|vending-franchises|veteran-franchises-for-sale|wholesale-distribution-franchises)_in_(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)$ /search_results.php?cat_name=$1&state_name=$2&cat_state=true [L,QSA,NC]
+
+#Search Results (states)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^state/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming|canada|international)-franchises$ /search_results.php?state_name=$1 [L,QSA,NC]
+
+#Search Results (categories)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^industry/(all-industries|advertising-franchises|auto-franchises|beauty-franchises|business-opportunities|business-services-franchises|child-related-franchises|cleaning-franchises|computer-internet-franchises|education-training-franchises|entertainment-franchises|financial-franchises|food-franchises|green-eco-friendly-franchises|health-fitness-franchises|home-based-franchises|home-services-repair-franchises|low-cost-franchises|manufacturing|mobile-franchises|pet-franchises|photography-video|printing-copy-shipping-signs|recreation-sports-franchises|restoration-disaster-recovery-franchises|retail-franchises|seasonal-franchises|security-alarm-franchises|senior-care-franchises|sports-recreation-franchises|travel-franchises|vending-franchises|veteran-franchises-for-sale|wholesale-distribution-franchises)$ /search_results.php?cat_name=$1 [L,QSA,NC]
+
+#Search Results (categories|state|investment)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^industry/(all-industries|advertising-franchises|auto-franchises|beauty-franchises|business-opportunities|business-services-franchises|child-related-franchises|cleaning-franchises|computer-internet-franchises|education-training-franchises|entertainment-franchises|financial-franchises|food-franchises|green-eco-friendly-franchises|health-fitness-franchises|home-based-franchises|home-services-repair-franchises|low-cost-franchises|manufacturing|mobile-franchises|pet-franchises|photography-video|printing-copy-shipping-signs|recreation-sports-franchises|restoration-disaster-recovery-franchises|retail-franchises|seasonal-franchises|security-alarm-franchises|senior-care-franchises|sports-recreation-franchises|travel-franchises|vending-franchises|veteran-franchises-for-sale|wholesale-distribution-franchises)/state/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming|canada|international)/investment/([0-9]+)$ /search_results.php?cat_name=$1&state_name=$2&investment=$3 [L,QSA,NC]
+
+#Search Results (investments)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^investment-level/franchises-(under|over)-([0-9]+)$ /search_results.php?investment=$2&range=$1 [L,QSA]
+
+#Search Results (other)
+RewriteRule ^(new-franchises|featured-franchises|top-franchises|low-cost-franchises|hot-and-trendy-franchises|high-investment-franchises)$  search_results.php?section=$1 [L,QSA]
+RewriteRule ^directory$  search_results.php?section=directory [L,QSA]
+
+#Search Results (alphabetical)
+RewriteRule ^alphabetical-company-search/([a-z]{1}|non-alpha)$ /search_results.php?section=alphabetical-company-search&alphabet=$1 [L,QSA]
+RewriteRule ^name/([^/]+)$ /search_results.php?section=name-search&name=$1 [L,QSA]
+
+#Search Results Landing (thankyou)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(find-a-franchise|great-franchises-(a|b|c|d|e|q|r|demo))/thank-you /landing.php?section=thank-you&thankyou=true&landing=true&landing_url=$1 [L,QSA,NC]
+
+#Search Results (thankyou)
+RewriteRule ^thank-you /search_results.php?section=thank-you&thankyou=true [L,QSA,NC]
+
+
+#Search Directories
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(alphabetical-company-search|industry|investment-level|state)$ /directory.php?section=$1 [L,QSA]
+
+#Profile
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(find-a-franchise|great-franchises-(a|b))/franchise/([^/]+)/([0-9]+)?$ profile.php?name=$2&concept_id=$3&landing=true&landing_url=$1 [L,QSA]
+#RewriteRule ^franchise/([^/]+)/([0-9]+)?$ profile.php?name=$1&concept_id=$2 [L,QSA]
+RewriteRule ^(franchise|franchises|consultants|distributorships|licenses|financing|dealerships|opportunities)/([^/]+)/([0-9]+)?$ profile.php?concept_type=$1&name=$2&concept_id=$3 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(find-a-franchise|great-franchises-(a|b))/franchise/([^/]+)?$ profile.php?name=$2&landing=true&landing_url=$1 [L,QSA] 
+#RewriteRule ^franchise/([^/]+)?$ profile.php?name=$1 [L,QSA] 
+RewriteRule ^(franchise|franchises|consultants|distributorships|licenses|financing|dealerships|opportunities)/([^/]+)?$ profile.php?concept_type=$1&name=$2 [L,QSA] 
+
+#New Profile Logic
+RewriteCond %{REQUEST_FILENAME} !-s
+#RewriteRule ^brochure_(franchise|franchises|consultants|distributorships|licenses|financing|dealerships|opportunities)/([0-9]+)/([0-9]+)/([^/]+)/?$ profile.php?website_id=$2&concept_id=$3&name=$4&custom_brochure=yes [L,QSA]
+
+#Other
+RewriteRule ^authcheck.html  /authorize.php [L,QSA]
+RewriteRule ^robots.txt  /robots.php
+
+#CSS Files
+RewriteRule ^head-([^/]+)-([0-9]+).css  /includes/css.php?css=$1
+
+#JSON Files
+RewriteRule ^profile-([0-9]+).json  /includes/json_profile.php?idlist=$1
+RewriteRule ^profile-([^/]+)-([^/]+).json  /includes/json_landing_profile.php?name=$1&profile_type=$2 
+RewriteRule ^state-([A-Z]{2}|[a-z]{2}).json  /includes/json_states.php?state=$1
+RewriteRule ^flags.json(.*)$   /includes/json_form.php$1
+RewriteRule ^validator.json(.*)$   /includes/json_validator.php$1
+RewriteRule ^newsletter.json(.*)$   /includes/json_newsletter.php$1
+RewriteRule ^cart.json(.*)$   /includes/json_cart.php$1
+RewriteRule ^guidant.json(.*)$   /includes/json_guidant.php$1
+RewriteRule ^cookie.json(.*)$   /includes/json_cookie.php$1
+RewriteRule ^contact-validator.json(.*)$   /includes/json_contact_validator.php$1
+RewriteRule ^suggestions.json(.*)$   /includes/json_suggestions.php$1
+RewriteRule ^quizzes.json(.*)$   /includes/json_quizzes.php$1
+RewriteRule ^email.json(.*)$   /includes/json_email.php$1
+
+#WordPress Includes
+RewriteRule ^wp_(head|header|footer).html /wordpress_external.php?section=$1&blog_include=true
+
+#Abandoned Cart
+RewriteRule ^where-you-left-off(.*)$ /abandoned-cart.php$1
+
+#Redirects
+RedirectMatch 301 ^/find-a-franchise$ /find-a-franchise/search
+Redirect 301 /find-a-franchise/investment-level/250001 /find-a-franchise/industry/high-investment-franchises
+
+#Simple 404 Redirects
+rewriteRule ^ads.txt?$ /simple404.php [L,QSA]
+rewriteRule ^manifest.json?$ /simple404.php [L,QSA]
+rewriteRule ^apple-touch-icon.png?$ /simple404.php [L,QSA]
+rewriteRule ^apple-touch-icon-(precomposed|60x60|72x72|76x76|114x114|120x120|144x144|152x152|180x180).png?$ /simple404.php [L,QSA]
+rewriteRule ^apple-touch-icon-(60x60|72x72|76x76|114x114|120x120|144x144|152x152|180x180)-precomposed.png?$ /simple404.php [L,QSA]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+
+# | Caching                                                                |
+
+# ------------------------------------------------------------------------------
+
+<ifModule mod_headers.c> 
+    # One year for image and video files
+    <filesMatch ".(flv|gif|ico|jpg|jpeg|mp4|mpeg|png|svg|swf|webp)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+
+    # One month for JavaScript and PDF files
+    <filesMatch ".(js|pdf)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
+
+    # One week for CSS files
+    <filesMatch ".(css)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+</ifModule>
+
+# ------------------------------------------------------------------------------
+
+# | Compression                                                                |
+
+# ------------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+	SetOutputFilter DEFLATE
+	SetEnvIfNoCase Request_URI \.ogg$ no-gzip dont-vary
+	SetEnvIfNoCase Request_URI \.mp3$ no-gzip dont-vary
+    # Force compression for mangled headers.
+    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+
+    # Compress all output labeled with one of the following MIME-types
+    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+    #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+    #  as `AddOutputFilterByType` is still in the core directives).
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE application/atom+xml \
+                                      application/javascript \
+                                      application/json \
+                                      application/ld+json \
+                                      application/rss+xml \
+                                      application/vnd.ms-fontobject \
+                                      application/x-font-ttf \
+                                      application/x-web-app-manifest+json \
+                                      application/xhtml+xml \
+                                      application/xml \
+                                      font/opentype \
+                                      image/svg+xml \
+                                      image/x-icon \
+                                      text/css \
+                                      text/html \
+                                      text/plain \
+                                      text/x-component \
+                                      text/xml
+    </IfModule>
+</IfModule>

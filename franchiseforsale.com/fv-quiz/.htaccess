@@ -1,0 +1,19 @@
+<IfModule mod_dir.c>
+DirectoryIndex index.php
+</IfModule>
+<IfModule pagespeed_module>
+ModPagespeed off
+</IfModule>
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+
+Options -Indexes
+
+#Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$  https://%{HTTP_HOST}/quiz/$1 [L,R=301] # <- for test, for prod use [L,R=301]
+
+rewriteRule ^([^/]+)/([0-9]+)/?$ quiz.php?url=$1&page_id=$2&preview=1 [NC,L,QSA]
+rewriteRule ^([^/]+)/?$ quiz.php?url=$1 [NC,L,QSA]
+</IfModule>
