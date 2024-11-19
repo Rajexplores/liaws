@@ -1,0 +1,1254 @@
+@charset "UTF-8";
+@font-face {
+    font-family: mulibold;
+    src: url(../images/franoppnetwork/site-fonts/muli-bold-webfont.woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: muliextrabold;
+    src: url(../images/franoppnetwork/site-fonts/muli-extrabold-webfont.woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: mulisemibold;
+    src: url(../images/franoppnetwork/site-fonts/muli-semibold-webfont.woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    font-family: mulisemibold,sans-serif;
+}
+
+.row{
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.h2, h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.h3, h3 {
+    font-size: 1.1875rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.h4, h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 1400px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .hidden-lg{
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .hidden-md{
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hidden-sm{
+        display: none !important;
+    }
+
+    .col-xs-6{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .h4, h4 {
+        font-size: 1.3125rem;
+    }
+
+    .h2, h2 {
+        font-size: 2.125rem;
+    }
+
+    .h3, h3 {
+        font-size: 1.9375rem;
+    }
+}
+
+.hide{
+    display: none !important;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.pd-0{
+    padding: 0 !important;
+}
+
+.light-gray-bg {
+    background: #f1efec;
+}
+
+.dark-gray-text {
+    color: #8a8a8a!important;
+}
+
+.medium-black-text {
+    color: #333!important;
+}
+
+.medium-gray-bdr {
+    border: solid #cacaca 1px;
+}
+
+.medium-black-bg {
+    background-color: #333;
+}
+
+.success-text {
+    color: #007f00;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 1px #0a0a0a;
+}
+
+.white-text {
+    color: #fefefe !important;
+}
+
+.black-text {
+    color: #0a0a0a!important;
+}
+
+.white-bg {
+    background-color: #fefefe;
+}
+
+.alert-text {
+    color: #cc1b00;
+}
+
+.bold{
+    font-family: mulibold,sans-serif !important;
+    font-weight: 600;
+}
+
+.extra-bold {
+    font-family: muliextrabold,sans-serif!important;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 5px 5px 5px 0 #cacaca;
+    box-shadow: 5px 5px 5px 0 #cacaca;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.row::after {
+    clear: both;
+}
+
+small {
+    font-size: 80%;
+    line-height: inherit;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-family: inherit;
+    font-size: .9rem;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #209ad6;
+    color: #fefefe !important;
+}
+
+.button.disabled, .button[disabled] {
+    opacity: .25;
+    cursor: not-allowed;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.columns {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.radius {
+    border-radius: 3px;
+}
+
+.xy-padded {
+    padding: 1rem;
+}
+
+.y-padded {
+    padding: 1rem 0;
+}
+
+.y-margin {
+    margin: 1rem 0;
+}
+
+.button.primary {
+    background-color: #209ad6;
+    color: #fefefe;
+}
+
+.primary-bg {
+    background: #209ad6;
+}
+
+.secondary-text {
+    color: #f26721;
+}
+
+/* Header */
+header{
+    height: 80px;
+    padding: 1rem 1rem 0 1rem;
+    border-bottom: solid #cacaca 1px;
+}
+
+header .site-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+header .navbar-header .button{
+    background-color: #209ad6;
+}
+
+header .site-nav .site-logo img{
+    width: 174px;
+    height: 55px;
+    margin-top: -5px;
+}
+
+header #nav-menu ul{
+    list-style: none;
+    display: flex;
+}
+
+header #nav-menu ul>li>a{
+    padding: 0.7rem 1rem;
+    color: #0a0a0a;
+    line-height: 1;
+    text-decoration: none;
+    font-size: .9em;
+    /* letter-spacing: 0.03rem; */
+    display: block;
+}
+
+header #nav-menu ul>li>a.button{
+    background-color: #f26721;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width : 992px) {
+    header{
+        height: auto;
+        padding: 10px 0 0;
+    }
+
+    header .site-nav, header #nav-menu ul{
+        display: block;
+    }
+
+    header #nav-menu ul>li>a.button{
+        width: fit-content;
+    }
+
+    header .site-nav{
+        padding: 0 7px;
+    }
+
+    header .navbar-header .button{
+        margin-right: 15px;
+    }
+}
+
+/* Home */
+#home a{
+    text-decoration: none;
+}
+
+#home .top-rank-block a{
+    display: block;
+}
+
+#home .top-rank-block h4{
+    padding: 0 5rem;
+    font-size: 1.3125rem;
+    color: #000;
+    padding-top: 8px;
+    font-family: mulisemibold,sans-serif;
+}
+
+#home .top-rank-block .top-rank-baner{
+    display: flex;
+    align-items: center;
+}
+
+/* Home Slider */
+
+.home-slider{
+    position: relative;
+}
+
+.home-slider .home-hero-text{
+    position: absolute;
+}
+
+#image-slider .splide__slide img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+#image-slider .splide__arrows, .splide__pagination{
+    display: none !important;
+}
+
+.home-hero-slide{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.button.secondary {
+    background-color: #f26721;
+    color: #fefefe;
+}
+
+.button.large {
+    font-size: 1.25rem;
+    display: inline-block;
+}
+
+.home-slider .home-hero-text a{
+    display: inline-block;
+}
+
+.accent {
+    width: 40px;
+    display: block;
+    color: #f26721;
+    border: solid 1px;
+    height: 0;
+    display: block;
+}
+
+@media only screen and (min-width : 768px) {
+    .home-slider .home-hero-text{
+        top: 21%;
+        left: 50%;
+    }
+
+    .home-slider .home-hero-text h2 {
+        margin-bottom: 1em;
+    }
+
+    .home-slider .home-hero-text h1 .sub {
+        font-size: 70%;
+        line-height: normal;
+        display: block;
+    }
+
+    .home-slider .home-hero-text h2 .sub {
+        display: block;
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+    .home-slider .home-hero-text{
+        top: 21%;
+        left: 50%;
+    }
+
+    .home-slider .home-hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .home-slider .home-hero-text h2 {
+        font-size: 1.5em;
+    }
+
+    .home-slider .home-hero-text h1 .sub {
+        font-size: 80%;
+    }
+
+    .home-hero-slide{
+        min-height: 600px;
+    }
+}
+
+
+/* Four websites */
+/* Advertise Seeker */
+.seekBacker li:before {
+    content: '';
+    background: url(../images/franoppnetwork/site-images/seeker-icons.png) no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    margin-right: 8px;
+}
+
+.seekBacker li.online:before {
+    background-position: 0 0;
+}
+
+.seekBacker li.turn:before {
+    background-position: 0 -40px;
+}
+
+.seekBacker li.custom:before {
+    background-position: 0 -80px;
+}
+
+/* Media Title */
+.mediaTile .hoverBox {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+/* Testimonial */
+.testimonialContainer ul li {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    width: 384px !important;
+    height: 500px;
+}
+
+.testimonialContainer ul li .testimony {
+    width: 85%;
+    /* margin: 21px auto; */
+    height: 500px;
+}
+
+/* .testimonialContainer .splide__track{
+    max-width: 65%;
+} */
+
+/* Brands */
+.leadingBrands #marqueeWrapper{
+    white-space: nowrap;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.leadingBrands ul li{
+    display: inline-block;
+}
+
+.leadingBrands #marqueeWrapper ul {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    /* margin: 0; */
+    line-height: 50px;
+    text-align: center;
+    /* -moz-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%); */
+    -moz-animation: bouncing-text 20s linear infinite alternate;
+    -webkit-animation: bouncing-text 20s linear infinite alternate;
+    animation: bouncing-text 20s linear infinite alternate;
+}
+
+@-moz-keyframes bouncing-text {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes bouncing-text {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes bouncing-text {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+
+.blurred-border:hover {
+    border: solid #f26721 1px;
+    -webkit-box-shadow: 1px 1px 10px 10px #f1efec;
+    box-shadow: 1px 1px 10px 10px #f1efec;
+}
+
+.blurred-border {
+    border: solid #cacaca 1px;
+    border-radius: 5px;
+    padding: 21px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    -webkit-box-shadow: 1px 1px 10px 10px #fdfdfd;
+    box-shadow: 1px 1px 10px 10px #fdfdfd;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .seekBacker {
+        background: url(../images/franoppnetwork/site-images/laptop.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .hoverBox {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        cursor: pointer;
+    }
+
+    .mediaTile .innerTextBox {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 140px;
+        background: rgba(241,239,236,.8);
+        padding: 10px 40px 0 40px;
+    }
+
+    .mediaTile .hoverBox:hover .innerTextBox {
+        background: rgba(32,154,214,.8);
+        color: #fefefe;
+        cursor: pointer;
+    }
+
+    .mediaTile .advertPackage {
+        background: #fff url(../images/franoppnetwork/site-images/fo-media-kit-tile.png) no-repeat center;
+    }
+
+    .mediaTile .hoverBox:hover {
+        background-color: rgba(10,10,10,.5);
+    }
+
+    .mediaTile .anchored {
+        height: 350px;
+    }
+
+    .mediaTile .topRanked {
+        background: url(../images/franoppnetwork/site-images/top-lead-source.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .qualityLeads {
+        background: url(../images/franoppnetwork/site-images/quality-leads.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .experiencedStaff {
+        background: url(../images/franoppnetwork/site-images/dedicated-staff.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .hoverBox:hover::after{
+        /* margin: 100px auto 0; */
+        content: 'Learn More';
+        display: block;
+        color: #fefefe;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: solid #fefefe 2px;
+        border-radius: 30px;
+        width: 140px;
+        padding: 10px;
+        margin: 0;
+        position: relative;
+        top: 25%;
+        left: 30%;
+    }
+
+    .mediaTile .advertPackage .hoverBox:hover::after, #newclient .mediaTile .hoverBox:hover::after {
+        content: 'Download';
+        position: absolute;
+        left: 32%;
+    }
+
+    #newclient .mediaTile .hoverBox:hover::after{
+        left: 38%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .seekBacker {
+        background-position: center!important;
+    }
+
+    .testimonialContainer .splide__track{
+        max-width: 65%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .testimonialContainer ul li {
+        width: 370px !important;
+    }
+
+    .testimonialContainer ul li .testimony{
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 40em) and (max-width: 63.99875em){
+    .home-hero-slide {
+        min-height: 500px;
+    }
+
+    .seekBacker {
+        background-position: 66% center!important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .home-slider .home-hero-text{
+        top: 0;
+        left: 0;    
+        padding: 10px;
+    }
+
+    .home-slider{
+        background-image: url(../images/hero-images/smallblurred.jpg);
+        min-height: 320px;
+    }
+
+    #home .top-rank-block .top-rank-baner img{
+        height: 45px;
+    }
+
+    #home .top-rank-block h4{
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .logoVector .siteName {
+        font-size: 3.5vw;
+    }
+
+    .mediaTile .hoverBox {
+        background: #209ad6;
+        border: solid #fefefe 2px;
+        padding: 10px;
+        min-height: 110px;
+        color: #fefefe;
+    }
+
+    .mediaTile .anchored:nth-child(even) .hoverBox {
+        background-color: #f1efec;
+        color: #0a0a0a;
+    }
+
+    .mediaTile .innerTextBox::after {
+        content: 'Learn More';
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .mediaTile.links .hoverBox:after {
+        content: '\2192';
+        color: #fefefe;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        font-size: 30px;
+        line-height: 1;
+        display: block;
+        text-align: center;
+    }
+}
+
+/* footer */
+footer {
+    padding-top: 21px;
+    border-top: solid #cacaca 1px;
+}
+
+footer .apps {
+    min-height: 60px;
+}
+
+footer .apps.BBN {
+    background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/bbn-bw.svg) no-repeat 13px 36px;
+    background-size: 55px;
+}
+
+footer .apps.FO {
+    background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/fo-bw.svg) no-repeat 13px 34px;
+    background-size: 55px;
+}
+
+footer .apps ul {
+    padding-left: 65px;
+}
+
+footer li {
+    color: #8a8a8a;
+}
+
+footer li a {
+    color: #8a8a8a;
+}
+
+footer li a span {
+    display: block;
+    width: 31px;
+    height: 31px;
+    background: url(../images/social-icons.png) no-repeat;
+}
+
+footer li a span.Twitter {
+    background-position: 0 -34px;
+}
+
+footer li a span.News {
+    background-position: 0 -67px;
+}
+
+footer label {
+    color: #8a8a8a;
+    font-size: 1rem;
+}
+
+footer .social {
+    display: flex;
+}
+
+footer .social li{
+    padding: 0.7rem 1rem;
+}
+
+footer .social li{
+    display: inline-block;
+}
+
+/* Profile */
+.hero {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero.covered {
+    background-size: cover;
+}
+
+.textContainer.anchored{
+    position: relative;
+    top: 50px;
+}
+
+#profiles .dropdown-pane{
+    position: absolute;
+    z-index: 10;
+    /* display: none; */
+    width: 300px;
+    padding: 1rem;
+    /* visibility: hidden; */
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+    background-color: #fefefe;
+    font-size: 1rem;
+    margin-top: -15px;
+    margin-left: 15px;
+}
+
+/* Contact us */
+form label {
+    font-family: mulibold, sans-serif;
+}
+
+label {
+    display: block;
+    margin: 0;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #0a0a0a;
+}
+
+form input[type=checkbox] {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.ff {
+    position: relative;
+}
+
+.ff input,
+.ff input:focus,
+.ff select,
+.ff select:focus {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border: solid #cacaca 1px;
+}
+
+.ff input,
+.ff select {
+    height: 2.5rem;
+    padding-left: 34px;
+    font-weight: 400;
+}
+
+.ff textarea,
+.ff textarea:focus {
+    padding-left: 34px;
+    float: left;
+    position: relative;
+    top: -40px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border: solid #cacaca 1px;
+}
+
+.ff span {
+    background: url(../images/franoppnetwork/site-images/social-and-form-sprite.png) no-repeat;
+    width: 30px;
+    height: 40px;
+    display: block;
+    float: left;
+    position: relative;
+    z-index: 2;
+    border-top: solid #cacaca 1px;
+    border-bottom: solid #cacaca 1px;
+}
+
+.ff.Calendar span {
+    background-position: 3px -721px;
+}
+
+.ff.Category span {
+    background-position: 3px -843px;
+}
+
+.ff.City span {
+    background-position: 3px -162px;
+}
+
+.ff.Comments span {
+    background-position: -26px 0;
+    border-bottom: none;
+}
+
+.ff.Company span {
+    background-position: 3px -563px;
+}
+
+.ff.County span {
+    background-position: 3px -80px;
+}
+
+.ff.Country span {
+    background-position: 3px -401px;
+}
+
+.ff.Credit span {
+    background-position: 3px -603px;
+}
+
+.ff.Dollar span {
+    background-position: 3px -240px;
+    max-width: 340px;
+}
+
+.ff.State span {
+    background-position: 3px -482px;
+}
+
+.ff.Email span {
+    background-position: 3px -40px;
+}
+
+.ff.Name span {
+    background-position: 3px -2px;
+}
+
+.ff.Password span {
+    background-position: 3px -282px;
+}
+
+.ff.Phone span {
+    background-position: 3px -120px;
+}
+
+.ff.PostalZip span {
+    background-position: 3px -202px;
+}
+
+.ff.Province span {
+    background-position: 3px -522px;
+}
+
+.ff.Street span {
+    background-position: 3px -440px;
+}
+
+.ff.Subject span {
+    background-position: 3px -360px;
+}
+
+.ff.Search span {
+    background-position: 3px -640px;
+}
+
+.ff.Facebook span {
+    background-position: -21px -760px;
+}
+
+.ff.Instagram span {
+    background-position: -28px -680px;
+}
+
+.ff.LinkedIn span {
+    background-position: -28px -640px;
+}
+
+.ff.Twitter span {
+    background-position: -26px -800px;
+}
+
+.ff.YouTube span {
+    background-position: -29px -722px;
+}
+
+.passwordLook {
+    position: absolute;
+    right: 13px;
+    z-index: 10;
+}
+
+.passwordLook.strikeye::before {
+    content: '/';
+    position: absolute;
+    top: 3px;
+    right: 16px;
+    z-index: 11;
+    color: #cacaca;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.passwordLook.strikeye::after {
+    background-color: rgba(255, 174, 0, .1);
+}
+
+.passwordLook::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url(../images/franoppnetwork/site-images/password-eye.png) no-repeat center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+    .hero.short-img {
+        min-height: 250px;
+    }
+
+    .hero.med-img {
+        min-height: 350px;
+    }
+
+    .hero.testimonial {
+        background-position: center 80%;
+    }
+
+    .medium-offset-6 {
+        margin-left: 50%;
+    }
+
+    .mediaKitBottom {
+        min-height: 332px;
+        background: url(../images/franoppnetwork/site-images/media-kit-help.jpg) no-repeat center bottom;
+        background-size: cover;
+        padding-top: 34px;
+    }
+
+    .mediaTile .inputForm {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/onboard-input.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .checkList {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/the-advert-checklist.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .ccAuthorize {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/cc-authorize.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .siteJumper {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/site-jumper.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .bestPractices {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/best-practices.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .soloEmail {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/email-template.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .franchisingInsightsVideo {
+        background: url(//assets.franoppnetwork.com/franoppnetwork/site-images/franchise-insights.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .mediaTile .franchisingInsightsVideo .hoverBox:hover::after {
+        content: 'Watch Video' !important;
+    }
+}
+
+@media only screen and (max-width: 767px)  {
+    .hero{
+        background-image: none !important;
+    }
+
+    .textContainer.anchored {
+        top: 0;
+    }
+
+    #profiles button{
+        margin: auto;
+    }
+
+    #newclient .mediaTile .hoverBox::after, #media .mediaTile .hoverBox::after {
+        content: '\27B2';
+        display: block;
+        text-align: center;
+        font-size: 50px;
+        line-height: 1;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #newclient .mediaTile .franchisingInsightsVideo .hoverBox::after {
+        content: '\25ba';
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    #newclient .mediaTile .innerTextBox::after, #media .mediaTile .innerTextBox::after{
+        content: 'Download';
+    }
+
+    #newclient .mediaTile .franchisingInsightsVideo .innerTextBox::after {
+        content: 'Watch The Video';
+    }
+
+    .mediaKitBottom {
+        background-color: #333;
+        padding-top: 34px;
+    }
+
+    #testimonial-slider .splide__arrow--prev{
+        left: 0;
+    }
+
+    #testimonial-slider .splide__arrow--next{
+        right: 0;
+    }
+}
+
+#errorPage ul{
+    list-style: initial;
+    padding-left: 1rem;
+}
+
+/* Modal */
+.modal.show{
+    display: block;
+    opacity: 1;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-dialog{
+    max-width: 600px;
+    width: 100%;
+    /* margin-top: 10%; */
+}
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+}
+
+.modal-dialog video{
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+}
+
+.videoLoad{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+    .modal-dialog{
+        margin: 0;
+    }
+    
+    .modal-block, .modal-body{
+        padding: 5px;
+    }
+}
+
+#waiting{
+    display: none;
+}
+#waiting.wait {
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    transition: opacity .3s ease;
+    background: rgba(255,255,255, .6);
+    z-index: 999999;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+#waiting.wait:before{
+    content:'';
+    display: block;
+    border: 16px solid rgba(225,225,225, .8);
+    border-radius: 50%;
+    border-top: 16px solid #f26721;
+    width: 250px;
+    height: 250px;
+    max-width: 25vw;
+    max-height: 25vw;
+    -webkit-animation: spin 1.5s linear infinite; /* Safari */
+    animation: spin 1.5s linear infinite;
+}
+@media (min-width: 768px){
+    #waiting.wait:before{
+        border-width: 40px;
+    }
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
